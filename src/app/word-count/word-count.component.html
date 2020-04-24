@@ -1,0 +1,260 @@
+<div id="main" role="main">
+  <div class="container">
+    <div id="pre-content">
+      <div class="region region-pre-content">
+        <div id="block-kt-pages-branding" class="clearfix block block-kt-pages">
+          <div class="content">
+            <!-- <div id="branding-primary" class="branding branding-lg center-block">
+              <a href="/" class="navbar-brand">
+                <div id="logo-md">
+                  <img src="https://keywordtool.io/sites/all/images/keyword-tool-logo.png" alt="Keyword Tool logo" width="auto" height="60" class="center-block">
+                </div>
+              </a>
+            </div> -->
+            <h2 id="slogan" class="text-center">Use Word Counter to Count Number of Words, Sentences, Characters, and Paragraphs</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="region region-content">
+        <div id="block-system-main" class="clearfix block block-system">
+          <div class="content">
+            <div class="row">
+              <div class="col-md-12 margin-b-2">
+                <div class="word-counter">
+                  <div class="lead">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="panel panel-primary">
+                          <div class="panel-body">
+                            <div class="word-counter-value word-counter-value-char">
+                                {{ char_count }}
+                            </div>
+                          </div>
+                          <div class="panel-heading">
+                            <div class="word-counter-label word-counter-label-char">character (no spaces)</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="panel panel-success">
+                          <div class="panel-body">
+                            <div class="word-counter-value word-counter-value-all">
+                              {{ char_count_spaces }}
+                            </div>
+                          </div>
+                          <div class="panel-heading">
+                            <div class="word-counter-label word-counter-label-all">character (with spaces)</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="panel panel-info">
+                          <div class="panel-body">
+                            <div class="word-counter-value word-counter-value-word">
+                            {{ word_count }}  
+                            </div>
+                          </div>
+                          <div class="panel-heading">
+                            <div class="word-counter-label word-counter-label-word">word</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="panel panel-warning">
+                          <div class="panel-body">
+                            <div class="word-counter-value word-counter-value-sentence">
+                              {{ sentence_count }}
+                            </div>
+                          </div>
+                          <div class="panel-heading">
+                            <div class="word-counter-label word-counter-label-sentence">sentence</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="panel panel-danger">
+                          <div class="panel-body">
+                            <div class="word-counter-value word-counter-value-para">
+                              {{ paragraph_count }}
+                            </div>
+                          </div>
+                          <div class="panel-heading">
+                            <div class="word-counter-label word-counter-label-para">paragraph</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="panel panel-primary">
+                          <div class="panel-body">
+                            <div class="word-counter-value word-counter-value-char">
+                              {{ reading_speed }} min
+                            </div>
+                          </div>
+                          <div class="panel-heading">
+                            <div class="word-counter-label word-counter-label-char">reading time</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="panel panel-success">
+                          <div class="panel-body">
+                            <div class="word-counter-value word-counter-value-all">
+                              {{ speaking_speed }} min
+                            </div>
+                          </div>
+                          <div class="panel-heading">
+                            <div class="word-counter-label word-counter-label-all">speaking time</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <textarea rows="20" 
+                    [formControl]="descriptionControl"
+                    class="form-control"
+                    id='area'
+                    placeholder="Type or paste your text"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row margin-t-2">
+              <div class="col-xs-12">
+                <div class="well well-lg">
+                  <h1 class="h1-sm">Word Counter Tool: Free, Quick, and with No Limits!</h1>
+                  <p>Word Counter Tool is a free online word count tool to help you count and calculate the number of words in a text. This online tool can also calculate the total character or letter count, sentences, and paragraphs for the text entered in the input box. The best part? The number of words and characters you can count with this tool is unlimited!</p>
+                  <p><a href="https://www.copypress.com/blog/word-count-important/" target="_blank">Word count is an important metric for writing</a>, especially in publishing, advertising, academia, and legal proceedings. By using this tool, you will be able to determine how many words there are in your text. You can then check to see if there are enough number of words or it has exceeded a certain limit.</p>
+                  <p>This free online word counter can also help to check how many characters your text contains, especially if your text is meant for use on social media, <a href="https://ads.google.com/" target="_blank">Google Ads</a>, app, and website headlines or Google meta description.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="well well-lg">
+                  <h3>Why is word count important?</h3>
+                  <p>Whether it is for a website, a blog, an e-book or a corporate document, different types of writing requires a certain amount of word count length. Some platforms have limits as to how many words or letters can be used, for example, Google AdWords search ads or <a href="https://www.facebook.com/business/ads-guide/image/facebook-feed/traffic" target="_blank">Facebook banner ads</a>.</p>
+                  <p>Social media platforms are created for easy reading and quick consumption. Each platform has its own prescribed amount of viewable character count that can be posted. This is why knowing the character limits for social media platforms is important, especially if you are a digital marketer or social media manager.</p>
+                  <p>If you are creating or managing social media content, it is useful to know the exact character limits for the platform you are working on. Here are the different character limits for popular social media platforms:</p>
+                  <ul>
+                    <li><a href="https://twitter.com/" target="_blank">Twitter</a> - Up to 280 characters (increased from the previous 140 characters).</li>
+                    <li><a href="https://www.facebook.com/" target="_blank">Facebook</a> - No more than 63,206 characters for posts and a maximum of 8,000 characters for comments.</li>
+                    <li><a href="https://www.instagram.com/" target="_blank">Instagram</a> - Limited to 30 hashtags and 2,200 characters for a caption (where only the first 125 characters will be displayed while the rest will be truncated).</li>
+                    <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> - Headline text is limited to 120 characters, the summary section has a character limit of 2,000, position title has a limit of 100 characters, and the description box is limited to 1,000 characters.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="well well-lg">
+                  <h3>Word count for SEO (and how it can improve your rankings)</h3>
+                  <p>If you are writing for SEO, <a href="https://searchengineland.com/seo-user-science-behind-long-form-content-230721" target="_blank">word count plays an important role</a>. The majority of high ranking content that appears on page 1 on SERP are long-form articles. A lot of them exceed 2,000 words, while most of them are at least 1,500 words.</p>
+                  <p>You will notice that a lot of long-form articles have evergreen content - the best type of content for SEO. <a href="https://moz.com/blog/the-true-power-of-evergreen-content-a-case-study" target="_blank">Evergreen content receives more clicks over a long period of time</a>, as opposed to content that is based on current news or viral trends.</p>
+                  <p>Longer articles are also seen to be more authoritative. When you need to write longer content, you have the opportunity to insert more data and information into your article and make it more valuable.</p>
+                  <p>As a result, your content will carry more value which increases the potential for the article being shared and linked to. The more social shares and backlinks you receive, the better your website or page rankings will be.</p>
+                  <p>By using the Word Count Tool, you will be able to make sure that your article has the minimum amount of <a href="https://thenextweb.com/contributors/2017/06/05/5-proven-seo-benefits-long-form-content-marketers/" target="_blank">word count for SEO best practices</a>. Having an ideal number of word count will not guarantee good search rankings but it will surely help in the long run.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="well well-lg">
+                  <h3>How to use an online word counter and character counter tool</h3>
+                  <p>Word Count Tool is incredibly easy to use and can give you almost instantaneous results. It will show you the word count for the number of words, characters, sentences, and paragraphs.</p>
+                  <p>It also works as a character count tool and can be used to perform word count for <a href="https://www.google.com/docs/about/" target="_blank">Google Docs</a>, PDF files, Microsoft Excel, Microsoft Powerpoint, Adobe InDesign, and many more. All you need to do is copy the text from any file types or websites and paste it into the Word Counter Tool input box.</p>
+                  <p>Word Counter Tool can calculate how many words in a paragraph and even calculate the total word count for a novel, essay, or books. There is no limit to how many words you would like to count. It can also be useful if you have a maximum limit to the number of words allowed for an article or blog post you are working on.</p>
+                  <p>Unlike most other word counter tools, our Word Counter Tool does not set any limit to the amount of text you wish to count. It is completely free to use with no limits to the number of times you would like to use it.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="well well-lg">
+                  <h3>Why use Word Counter Tool to calculate words and character count?</h3>
+                  <p>If you are familiar with Microsoft apps, you would know that there is also a feature that enables word count in Word. On top of that, there is also a word counter in Google Docs that can also count the number of characters.</p>
+                  <p>Although software like Microsoft Word and Google Docs have their own built-in word counters, there is a clear advantage to using a free online tool like Word Counter Tool instead.</p>
+                  <p>With Word Counter Tool, you are not limited to any particular file formats like Microsoft Word or Google Docs. Instead, you can copy and paste any type of text to find how many words or characters it contains.</p>
+                  <p>You can perform a word count for your Microsoft Word file, Google Docs document, Microsoft Excel sheet, academic essays, or also a <a href="https://support.google.com/google-ads/answer/1704389" target="_blank">character count for your Google Ads search ad</a>, Facebook posts, Instagram caption, and many more, all on Word Counter Tool.</p>
+                  <p>It is easy to use and gives you results within the blink of an eye. Since it is free to use, you can perform word count checks with Word Counter Tool as many times as you would like. Whether you are a digital marketer, SEO specialist, writer, blogger, or student, Word Counter Tool will be a valuable addition to your workflow.</p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <h3 class="text-center margin-t-0">Frequently Asked Questions</h3>
+                <div class="panel-group" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="faq-heading-1">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" href="#faq-1" aria-expanded="false" aria-controls="faq-1" class="collapsed">⭐ Is word counter really FREE?</a>
+                      </h4>
+                    </div>
+                    <div id="faq-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-1" aria-expanded="false" style="height: 0px;">
+                      <div class="panel-body">
+                        <p>Yes! You can use word counter free without seeing any ads or annoying limits.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="faq-heading-2">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" href="#faq-2" aria-expanded="false" aria-controls="faq-2">⭐ Will I see any limits while using the tool?</a>
+                      </h4>
+                    </div>
+                    <div id="faq-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-2" aria-expanded="false">
+                      <div class="panel-body">
+                        <p>Never! The tool is free and we will not restrict your usage of it.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="faq-heading-3">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" href="#faq-3" aria-expanded="false" aria-controls="faq-3" class="">⭐ What is the maximum number of characters or words that it can count?</a>
+                      </h4>
+                    </div>
+                    <div id="faq-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-3" aria-expanded="false">
+                      <div class="panel-body">
+                        <p>There is NO LIMIT! You can paste any number of words to see the results!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="faq-heading-4">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" href="#faq-4" aria-expanded="false" aria-controls="faq-4" class="">⭐ Does it count sentences or paragraphs?</a>
+                      </h4>
+                    </div>
+                    <div id="faq-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-4" aria-expanded="false">
+                      <div class="panel-body">
+                        <p>Yes, you will see the number of sentences and paragraphs in your text.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="faq-heading-5">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" href="#faq-5" aria-expanded="false" aria-controls="faq-5" class="">⭐ Will I see the number of characters with and without the spaces?</a>
+                      </h4>
+                    </div>
+                    <div id="faq-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-5" aria-expanded="false">
+                      <div class="panel-body">
+                        <p>Absolutely! Word counter will show you both - the number of characters with and without the spaces!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+<article class="post-567 post type-post status-publish format-standard hentry category-javascript tag-ecma-script-6 tag-es6 tag-javascript tag-js tag-promise tag-promises ast-article-single" id="post-567" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+    <div class="ast-breadcrumbs-wrapper">
+        <div class="ast-post-format- ast-no-thumb single-layout-1">
+        <header class="entry-header ast-header-without-markup"></header>
+        <div class="entry-content clear" itemprop="text">
+            <h2>JavaScript Promises untouched methods</h2>
+            <p>Promise API is a very powerful way provided by JavaScript to execute async operations. For the most part developers use only <code>resolve</code> and <code>reject</code> methods of prototype object of <code>Promise</code>. However, the promise API allows us to do even more. In this post I will walk you through promise methods that we do not used everyday. Hint: they are <code>all</code>, <code>any</code>, <code>allSettled</code>.</p>
+            <p>Before moving forward one small note to readers new to JS. A promise has 2 states: settled and unsettled. A promise is said to be settled when it is either fulfilled (some also call it resolved) or is rejected. A promise is said to be unsettled when it is neither fulfilled nor rejected.</p>
+            <div class="wp-block-uagb-advanced-heading" id="uagb-adv-heading-525a2512-b832-43d8-92da-2ed38ccef704">
+            <h2 class="uagb-heading-text">Promise.all</h2>
+            <div class="uagb-separator-wrap">
+                <div class="uagb-separator"></div>
+            </div>
+            <p class="uagb-desc-text">First and foremost, <code>Promise.all</code>. This should be used when one wants to call multiple async methods and should return the result only when they are successful. <code>all</code> method  takes the input as an array of promise objects and returns a promise object which fulfils when all the promise objects passed are fulfilled or the array is empty and/ or gets rejected when the first of them is rejected.</p>
+            </div>
+            <pre class="wp-block-code">
+                <!-- <code>function promiseAllTest() {
+    var promise1 = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 100, 'promise1 is resolved');
+    });
+    var promise2 = Promise.resolve('promise2 is resolved');
+    
+    return Promise.all([promise1, promise2]);
+    }
+    
+    promiseAllTest().then(function(values) {
+    console.log(values);
+    // logs: ["promise1 is resolved", "promise2 is resolved"]
+    });</code> -->
+            </pre>
+            <p>Above code demonstrates that <code>promiseAllTest</code> returns a new promise which is fulfilled only when promise1 and promise2 are fulfilled. This fulfilled promise takes a function with a list of values(an array) which are provided by each of the fulfilled promises. Note that order of promises passed to promise.all and passed to function after fulfilment is same.</p>
+            <pre class="wp-block-code">
+                <!-- <code>Promise.all([]).then(function(values) {
+    console.log(values);
+    // This should log: []
+    });</code> -->
+            </pre>
+            <p>Here we can see what happens when no promises are fed to promise.all. The list of values it gets is an empty array.</p>
+            <pre class="wp-block-code">
+                <!-- <code>function promiseAllTest() {
+    var promise1 = new Promise(function(resolve, reject) {
+    setTimeout(reject, 1000, 'promise1 is rejected');
+    });
+    var promise2 = Promise.reject('promise2 is rejected');
+    var promise3 = true;
+    return Promise.all([promise1, promise2, promise3]);
+    }
+    
+    promiseAllTest().then(function(values) {
+    console.log(values);
+    // above console.log does not get executed
+    }).catch(function(rejectedValue) {
+    console.log(rejectedValue);
+    // logs "promise2 is rejected"
+    });</code> -->
+            </pre>
+            <p>As seen above if any of the promises to promise.all is rejected, then the promise returned by promise.all is also rejected. Note that the promise2 fails before promise1 and therefore error message from promise2 is only logged irrespective of the order in which they were passed to promise.all.</p>
+            <div class="wp-block-uagb-advanced-heading" id="uagb-adv-heading-da417c0a-f382-40e7-aa77-bd1ce1e974e4">
+            <h2 class="uagb-heading-text">Promise.allSettled</h2>
+            <div class="uagb-separator-wrap">
+                <div class="uagb-separator"></div>
+            </div>
+            <p class="uagb-desc-text">The allSettled method of Promise API takes an array of promise objects as an argument and returns a promise which is <strong>always fulfilled</strong> irrespective of the promises supplied as arguments to it fulfil or reject. The fulfilled promise of allSettled gives an array of objects containing a field, <code>status</code> which can be ‘fulfilled’ or ‘rejected’ and <code>value</code> if the status is ‘fulfilled’ or <code>reason</code> if the status is ‘rejected’</p>
+            </div>
+            <pre class="wp-block-code">
+                <!-- <code>function promiseAllSettled() {
+    const promise1 = Promise.resolve('promise1 is fulfilled');
+    const promise2 = new Promise(function(resolve, reject) {
+    setTimeout(reject, 100, 'promise2 is rejected');
+    });
+    
+    return Promise.allSettled([promise1, promise2]);
+    }
+    promiseAllSettled().then(function(values) {
+    values.forEach(function(result) { 
+    console.log(result);
+    /* two objects are logged
+        { status: "fulfilled", value: "promise1 is fulfilled" }
+        {status: "rejected", reason: "promise2 is rejected"}
+    */
+    })
+    }).catch(function(someValues) {
+    // any piece of code here does not get executed.
+    });</code> -->
+            </pre>
+            <div class="wp-block-uagb-advanced-heading" id="uagb-adv-heading-d2820423-9311-4280-807d-6687bfe6f3bf">
+            <h2 class="uagb-heading-text">Promise.race</h2>
+            <div class="uagb-separator-wrap">
+                <div class="uagb-separator"></div>
+            </div>
+            <p class="uagb-desc-text">The race method takes an array as argument and returns a promise which is settled when any of the promises settle.</p>
+            </div>
+            <pre class="wp-block-code">
+                <!-- <code>var promise1 = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 100, 'promise1 is resolved');
+    });
+    
+    var promise2 = new Promise(function(resolve, reject) {
+    setTimeout(reject, 200, 'promise2 is rejected');
+    });
+    
+    Promise.race([promise1, promise2]).then(function(value) {
+    console.log(value);
+    });</code> -->
+            </pre>
+            <p>In the above piece of code, promise1 is fulfilled first and therefore its value is settled.</p>
+            <pre class="wp-block-code">
+                <!-- <code>var promise1 = new Promise(function(resolve, reject) {
+    setTimeout(reject, 100, 'promise1 is rejected');
+    });
+    
+    var promise2 = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 200, 'promise2 is resolved');
+    });
+    
+    Promise.race([promise1, promise2]).then(function(value) {
+    // this piece of code does not execute in this case
+    }).catch(function(rejectedValue) {
+    console.log(rejectedValue);
+    });</code> -->
+            </pre>
+            <p>Promise returned by promise.race is rejected since promise1 is rejected before promise2.</p>
+            <p><strong>Conclusion:</strong> In this blog we learnt what does JavaScript’s Promise APIs provide on the advanced level.</p>
+            <p>Happy coding <img draggable="false" role="img" class="emoji" alt="🙂" src="https://s.w.org/images/core/emoji/12.0.0-1/svg/1f642.svg"></p>
+        </div>
+        <!-- .entry-content .clear -->
+        </div>
+    </div>
+</article>

@@ -14,10 +14,10 @@ const forceSSL = function() {
 
 const app = express();
 
-app.use(express.static(__dirname + '/dist/word-count'));
+app.use(express.static(__dirname + '/dist/word-counter'));
 
 app.get('/*', function(req,res) {
-  res.sendFile(path.join(__dirname,'/dist/word-count/index.html'));
+  res.sendFile(path.join(__dirname,'/dist/word-counter/index.html'));
 });
 
 app.use(forceSSL());
